@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int gcd(int a, int b){ //ฟังก์ขัน หรม
+    int q,r;
+    a = abs(a);//ตัวตั้ง
+    b = abs(b);//ตัวหาร
+
+    while(b>0){
+        //กระบวนการหา หรม แบบยูคลิดโดยใช้นิยาม
+        q = a/b; //ผลหาร
+        r = a-q*b; //เศษ
+        a = b;
+        b = r;
+    }
+
+    return a; 
+}
+int main(){
+    int a,b;
+    cin>>a>>b;
+
+    cout<<gcd(a, b)<<endl;
+    
+    return 0;
+}
